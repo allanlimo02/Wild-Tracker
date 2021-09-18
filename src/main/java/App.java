@@ -19,16 +19,18 @@ public class App {
             Map<String, Object> model= new HashMap<>();
             return new ModelAndView(model, "endangeredInput.hbs");
         }, new HandlebarsTemplateEngine());
-        post("/en-success", (request,response)->{
+        get("/success", (request,response)->{
             Map<String, Object> model= new HashMap<>();
             String name = request.queryParams("name");
             String age = request.queryParams("age");
             String health = request.queryParams("health");
+            Endangered endangered=new Endangered(name,age,health);
+            model.put("endangered",endangered);
 //            Trying to save to sessions to confirms it works
             model.put("name",name);
             model.put("age",age);
             model.put("health",health);
-            return new ModelAndView(model,"endangeredSuccess.hbs");
+            return new ModelAndView(model,"success.hbs");
         }, new HandlebarsTemplateEngine());
 
         }
