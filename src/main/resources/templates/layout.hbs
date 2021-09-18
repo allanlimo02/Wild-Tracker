@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}}Heroes & Heroines {{/block}}</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+</head>
+<body>
+<div>
+    <div class="row h-10 bg-primary ">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-3">
+            <br>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!--begin main template-->
+
+
+    <div class="col-md-12">
+        {{#block "content"}}
+
+        {{/block}}
+
+    </div>
+</div>
+<!--end main template-->
+{{#block "footer"}}
+
+    </body>
+    </html>
+{{/block}}
