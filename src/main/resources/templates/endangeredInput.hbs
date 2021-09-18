@@ -1,0 +1,41 @@
+{{#partial "content"}}
+        <div class="container">
+            <h2>Endangered Animals Input Form</h2>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <form action="endangeredSuccess">
+                        <!-- Name Input -->
+                        <label for="name">Name: </label>
+                        <input type="text" name="name" id="name" class="form-control ">
+                        <!-- Age Input -->
+                        <label for="age">Age: </label>
+                        <select name="age" id="age" class="form-control ">
+                            <option value=""></option>
+                            <option value="new-born">New Born</option>
+                            <option value="young">Young</option>
+                            <option value="old">Old</option>
+                        </select>
+                        <!-- Health Input -->
+                        <label for="health">Health</label>
+                        <select name="health" id="health" class="form-control">
+                            <option value=""></option>
+                            <option value="healthy">Healthy</option>
+                            <option value="okay">Okay</option>
+                            <option value="sick">Sick</option>
+                        </select>
+                                                 <br><br>
+                        <button type="submit" class="btn btn-success">Submit Entry</button>
+
+                        <div class="text-right top--20">
+                                   <button type="reset" class="btn btn-danger ">Clear Entry</button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+{{/partial}}
+{{> layout.hbs}}
+

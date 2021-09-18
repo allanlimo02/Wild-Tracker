@@ -15,6 +15,9 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
-
+        get("/new-animal",(req,res)->{
+            Map<String, Object> model= new HashMap<>();
+            return new ModelAndView(model, "endangeredInput.hbs");
+        }, new HandlebarsTemplateEngine());
         }
 }
