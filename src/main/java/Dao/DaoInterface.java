@@ -1,7 +1,9 @@
 package Dao;
 
+import Animals.Endangered;
+
 public interface DaoInterface {
-    void add();
+    void add(Endangered endangered);
     void updateById(int id);
     void findById(int id);
     void find();

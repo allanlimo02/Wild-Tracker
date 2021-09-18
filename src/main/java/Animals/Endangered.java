@@ -5,7 +5,6 @@ public class Endangered extends Animal{
     private String age;
     private String health;
 
-
     public String getAge() {
         return age;
     }

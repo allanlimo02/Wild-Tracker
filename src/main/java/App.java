@@ -3,6 +3,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 import Animals.Endangered;
+import Dao.DaoInterface;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import static spark.Spark.*;
@@ -30,6 +31,7 @@ public class App {
             model.put("name",name);
             model.put("age",age);
             model.put("health",health);
+            //DaoInterface.add(endangered);
             return new ModelAndView(model,"success.hbs");
         }, new HandlebarsTemplateEngine());
 
