@@ -1,44 +1,52 @@
 {{#partial "content"}}
-        <div class="container">
-            <h2>Endangered Animals Input Form</h2>
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <form action="success">
-                        <!-- Name Input -->
-                        <label for="name">Name: </label>
-                        <input type="text" name="name" id="name" class="form-control ">
-                        <!-- Age Input -->
-                        <label for="age">Age: </label>
-                        <select name="age" id="age" class="form-control ">
-                            <option value=""></option>
-                            <option value="new-born">New Born</option>
-                            <option value="young">Young</option>
-                            <option value="old">Old</option>
-                        </select>
-                        <!-- Health Input -->
-                        <label for="health">Health</label>
-                        <select name="health" id="health" class="form-control">
-                            <option value=""></option>
-                            <option value="healthy">Healthy</option>
-                            <option value="okay">Okay</option>
-                            <option value="sick">Sick</option>
-                        </select>
-                                                 <br><br>
-                        <button type="submit" class="btn btn-success">Submit Entry</button>
+    <div class="container">
+        <h2> Animals Input Form</h2>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <form action="success" method="post">
+                    <!-- Name Input -->
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" class="form-control ">
+                    <!-- Age Input -->
+                    <label for="age">Age: </label>
+                    <select name="age" id="age" class="form-control">
+                        <option value=""></option>
+                        <option value="new-born">New Born</option>
+                        <option value="young">Young</option>
+                        <option value="old">Old</option>
+                    </select>
+                    <!-- Health Input -->
+                    <label for="health">Health</label>
+                    <select name="health" id="health" class="form-control">
+                        <option value=""></option>
+                        <option value="healthy">Healthy</option>
+                        <option value="okay">Okay</option>
+                        <option value="sick">Sick</option>
+                    </select>
+                    <!-- Endangered -->
+                    <label for="endangered">Endangered</label>
+                    <select name="endangered" id="endangered" class="form-control">
+                        <option value=""></option>
+                        <option value="true">Endangered</option>
+                        <option value="false">Not Endangered</option>
+                    </select>
 
-                        <div class="text-right top--20">
-                                   <button type="reset" class="btn btn-danger ">Clear Entry</button>
-                        </div>
-                        <a href="/" class="btn btn-primary">Back Homepage</a>
-                        <button class="btn btn-primary" href="/">Back Homepage</button>
+                    <br><br>
+                    <button type="submit" class="btn btn-success">Submit Entry</button>
+
+                    <div class="text-right top--20">
+                        <button type="reset" class="btn btn-danger ">Clear Entry</button>
+                    </div>
+                    <a href="/" class="btn btn-primary">Back Homepage</a>
+                    <button class="btn btn-primary" href="/">Back Homepage</button>
 
 
-                    </form>
-                </div>
-                <div class="col-md-3"></div>
+                </form>
             </div>
+            <div class="col-md-3"></div>
         </div>
+    </div>
 {{/partial}}
 {{> layout.hbs}}
 

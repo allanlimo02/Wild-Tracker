@@ -1,12 +1,14 @@
 package Dao;
 
-import Animals.Endangered;
+import Animals.Animal;
+
+import java.util.List;
 
 public interface DaoInterface {
-    void add(Endangered endangered);
+    void add(Animal animal);
     void updateById(int id);
     void findById(int id);
-    void find();
+    List<Animal> findAll();
     void delete(int id);
-    void delete();
+    List<Animal> deleteAll();
 }

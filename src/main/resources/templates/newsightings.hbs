@@ -1,0 +1,17 @@
+{{#partial "content"}}
+    <form action="sightSuccess" method="post">
+        <!--  -->
+        <label for="animalId">Animal ID</label>
+        <input type="text" name="animalId" id="animalId" class="form-control">
+        <!--  -->
+        <label for="location">Sighting Location</label>
+        <input type="text" name="location" id="location" class="form-control">
+        <!--  -->
+        <label for="rangerName">Ranger Name</label>
+        <input type="text" name="rangerName" id="rangerName" class="form-control">
+        <!--  -->
+        <button type="submit" class="btn btn-success">Submit Sighting</button>
+
+    </form>
+{{/partial}}
+{{> layout.hbs}}
