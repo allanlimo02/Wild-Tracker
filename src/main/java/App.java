@@ -2,6 +2,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 import Animals.Animal;
+import Dao.Dao;
 import Dao.DaoInterface;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
@@ -10,6 +11,8 @@ import static spark.Spark.*;
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
+        Dao dao = new Dao();
+
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "index.hbs");
@@ -33,7 +36,7 @@ public class App {
             model.put("age",age);
             model.put("health",health);
             model.put("endangered",endangered);
-           //DaoInterface.add(endangered);
+            dao.add(animal);
             return new ModelAndView(model,"success.hbs");
         }, new HandlebarsTemplateEngine());
     // all
@@ -48,6 +51,7 @@ public class App {
             String location = request.queryParams("location");
             String rangerName = request.queryParams("rangerName");
             Sighting sighting=new Sighting(animalId,location,rangerName);
+
             //Trying to save to sessions to confirms it works
             model.put("animalId",animalId);
             model.put("location",location);
