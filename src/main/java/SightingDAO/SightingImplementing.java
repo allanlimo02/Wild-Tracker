@@ -10,7 +10,7 @@ public class SightingImplementing implements SightingDao {
 
     @Override
     public void add(Sighting sighting) {
-          String sql="INSERT INTO sightings(location,ranger_name,animal_id) VALUES (:location,:rangerName,:animal_id)";
+          String sql="INSERT INTO sightings(location,ranger_name,animal_id) VALUES (':location',':rangerName',':animal_id')";
           Connection conn=sql2o.open();
           int id=(int) conn.createQuery(sql,true)
                   .bind(sighting)

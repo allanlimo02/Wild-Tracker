@@ -48,7 +48,7 @@ public class App {
             return new ModelAndView(model, "newsightings.hbs");
         }, new HandlebarsTemplateEngine());
         //Sight Success route
-        post("/newSight",(req,res)->{
+        post("/sightSuccess",(req,res)->{
             Map<String, Object> model= new HashMap<>();
             String animal_id=req.queryParams("animal_id");
             String location=req.queryParams("location");
@@ -61,7 +61,6 @@ public class App {
             Sighting sighting=new Sighting(location,rangerName,animal_id);
             // saving to the database
             sightingImplementing.add(sighting);
-
 
             return new ModelAndView(model,"sightSuccess.hbs") ;
         }, new HandlebarsTemplateEngine());
