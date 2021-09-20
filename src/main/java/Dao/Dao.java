@@ -13,7 +13,6 @@ public class Dao implements DaoInterface {
     public   void add(Animal animal) {
        Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker", "ngetich", "12345");
         try {
-            Class.forName("org.h2.Driver");
             String sql = "INSERT INTO animals (name,health, age,endangered) VALUES (:name, :age, :health,:endangered)";
             Connection con = sql2o.open();
              int id= (int) con.createQuery(sql, true)

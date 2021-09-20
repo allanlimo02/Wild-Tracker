@@ -1,15 +1,15 @@
 package Sightings;
 
 public class Sighting {
-    private int animalId;
+    private String animal_id;
     private String location;
     private String ranger;
     private int sight_id;
 
-    public Sighting(String location, String ranger, int animalId) {
-        this.animalId = animalId;
+    public Sighting(String location, String ranger, String animal_id) {
         this.location = location;
         this.ranger = ranger;
+        this.animal_id = animal_id;
 
     }
 
@@ -21,12 +21,12 @@ public class Sighting {
         this.sight_id = sight_id;
     }
 
-    public int getAnimalId() {
-        return animalId;
+    public String getAnimal_id() {
+        return animal_id;
     }
 
-    public void setAnimalId(int animalId) {
-        this.animalId = animalId;
+    public void setAnimal_id(String animal_id) {
+        this.animal_id = animal_id;
     }
 
     public String getLocation() {

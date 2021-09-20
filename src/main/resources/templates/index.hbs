@@ -23,10 +23,18 @@
         </div>
     </div>
 <!--    To show all available animals in DB-->
-    <div class="container">
+    <div class="container" style="text-align:center;">
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-4">
+                <h2>All Animals Recorded</h2>
+                {{#each "animal"}}
+                    Name:{{name}}<br>
+                    Health: {{health}}<br>
+                    Age : {{age}}
+
+
+                {{/each}}
 
 
             </div>
