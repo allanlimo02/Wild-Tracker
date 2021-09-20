@@ -11,14 +11,14 @@ public class SightingImplementing implements SightingDao {
     public void add(Sighting sighting) {
         Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker", "ngetich", "12345");
         try {
-            String sql = "INSERT INTO sightings (location,ranger_name,animal_id) VALUES (:location,:rangerName,:animalId)";
+            String sql = "INSERT INTO sighting (location,ranger_name,animal_id) VALUES (:location,:rangerName,:animalId)";
             Connection con = sql2o.open();
             int id= (int) con.createQuery(sql, true)
                     .bind(sighting)
                     .executeUpdate()
                     .getKey();
         } catch (Exception ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
 
     }

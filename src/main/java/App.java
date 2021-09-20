@@ -15,6 +15,8 @@ public class App {
         staticFileLocation("/public");
         Dao dao = new Dao();
         SightingImplementing sightingImplementing= new SightingImplementing();
+
+        //****************************************
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "index.hbs");
@@ -43,8 +45,8 @@ public class App {
         //Route to show all animals
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            List<Animal> tasks = dao.findAll();
-            model.put("tasks", tasks);
+            List<Animal> animal = dao.findAll();
+
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -54,20 +56,42 @@ public class App {
             return new ModelAndView(model, "newsightings.hbs");
         }, new HandlebarsTemplateEngine());
         //Sight Success route
+//        post("/sightSuccess", (request,response)->{
+//            Map<String, Object> model= new HashMap<>();
+//            int animalId = Integer.parseInt(request.queryParams("animalId"));
+//            String location = request.queryParams("location");
+//            String rangerName = request.queryParams("rangerName");
+//            //Trying to save to sessions to confirms it works
+//            model.put("animalId",animalId);
+//            model.put("location",location);
+//            model.put("rangerName",rangerName);
+//            Sighting sight= new Sighting(location,rangerName,animalId);
+//            sightingImplementing.add(sight);
+//            return new ModelAndView(model,"sightSuccess.hbs");
+//        }, new HandlebarsTemplateEngine());
+
+        //******************************************8
         post("/sightSuccess", (request,response)->{
             Map<String, Object> model= new HashMap<>();
             int animalId = Integer.parseInt(request.queryParams("animalId"));
             String location = request.queryParams("location");
             String rangerName = request.queryParams("rangerName");
-            //Trying to save to sessions to confirms it works
-            model.put("animalId",animalId);
+            Sighting sight=new Sighting(location,rangerName,animalId);
             model.put("location",location);
             model.put("rangerName",rangerName);
-            Sighting sight= new Sighting(location,rangerName,animalId);
+            model.put("animalId",animalId);
             sightingImplementing.add(sight);
-
             return new ModelAndView(model,"sightSuccess.hbs");
         }, new HandlebarsTemplateEngine());
+        //############################################
+        //Route to show all animals
+        get("/", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Animal> animal = dao.findAll();
+
+            return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
+        //******************************************
         //Post trial method
 
 
