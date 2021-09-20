@@ -56,7 +56,7 @@ public class App {
         //Sight Success route
         post("/sightSuccess", (request,response)->{
             Map<String, Object> model= new HashMap<>();
-            String animalId = request.queryParams("animalId");
+            int animalId = Integer.parseInt(request.queryParams("animalId"));
             String location = request.queryParams("location");
             String rangerName = request.queryParams("rangerName");
             //Trying to save to sessions to confirms it works
@@ -68,6 +68,7 @@ public class App {
 
             return new ModelAndView(model,"sightSuccess.hbs");
         }, new HandlebarsTemplateEngine());
+        //Post trial method
 
 
         }

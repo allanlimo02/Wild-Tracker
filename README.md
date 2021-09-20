@@ -37,6 +37,14 @@ After cloning to your local machine navigate to the folder you cloned into and o
 * Navigate into the ``` src/main/java/App.java ``` and click run in intellij.
 * Go to your browser and type ``` localhost:4567 ```
 ---
+##Setting up database
+
+Use the  folloring comands to create databse and tabes
+* ```psql```
+  * ```CREATE DATABASE wildlife_tracker;```
+   * ``\c wildlife_tracker``
+   * ``CREATE TABLE animals (id serial PRIMARY KEY, name VARCHAR,health VARCHAR,age VARCHAR,endangered BOOLEAN)``
+    * ````CREATE TABLE sighting (id serial PRIMARY KEY, rangerId VARCHAR,animal_id,location VARCHAR)````
 ## Running the Tests
 
 Create a test class for running tests in the application.
@@ -45,9 +53,9 @@ This is a sample test that tests if the getter method works
 
 ```
   @Test
-    public void Heros_instantiatesWithName_String() {
-        Heros hero = new Heros("Moh","21","flash","time");
-        assertEquals("Moh", hero.getName());
+    public void animal_name() {
+        Animal animal = new Animal(1,"Lion");
+        assertEquals("Lion", animal.getName());
 
     }
 ```

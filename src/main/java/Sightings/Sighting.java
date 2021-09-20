@@ -1,12 +1,12 @@
 package Sightings;
 
 public class Sighting {
-    private String animalId;
+    private int animalId;
     private String location;
     private String ranger;
     private int sight_id;
 
-    public Sighting( String location, String ranger,String animalId) {
+    public Sighting(String location, String ranger, int animalId) {
         this.animalId = animalId;
         this.location = location;
         this.ranger = ranger;
@@ -21,11 +21,11 @@ public class Sighting {
         this.sight_id = sight_id;
     }
 
-    public String getAnimalId() {
+    public int getAnimalId() {
         return animalId;
     }
 
-    public void setAnimalId(String animalId) {
+    public void setAnimalId(int animalId) {
         this.animalId = animalId;
     }
 

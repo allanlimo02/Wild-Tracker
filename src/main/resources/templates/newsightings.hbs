@@ -11,11 +11,16 @@
             <form action="sightSuccess" method="post" style="border: 1px solid green; border-radius: 10px;padding: 10px; color:white; background-color: rgba(0, 30, 0, 0.8);">
                 <!--  -->
                 <label for="animalId">Animal ID</label>
-                <input type="text" name="animalId" id="animalId" class="form-control">
+                <input type="number" name="animalId" id="animalId" class="form-control">
                 <!--  -->
                 <label for="location">Sightings.Sighting Location</label>
-                <input type="text" name="location" id="location" class="form-control">
-                <!--  -->
+                <select name="location" id="location" class="form-control">
+                    <option value=""></option>
+                    <option value="River">Near River Banks</option>
+                    <option value="Hillside">Hill side</option>
+                    <option value="Northern">Northern Park</option>
+
+                </select>                <!--  -->
                 <label for="rangerName">Ranger Name</label>
                 <select name="rangerName" id="rangerName" class="form-control">
                     <option value=""></option>

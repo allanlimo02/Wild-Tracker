@@ -11,7 +11,6 @@ public class SightingImplementing implements SightingDao {
     public void add(Sighting sighting) {
         Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker", "ngetich", "12345");
         try {
-            Class.forName("org.h2.Driver");
             String sql = "INSERT INTO sightings (location,ranger_name,animal_id) VALUES (:location,:rangerName,:animalId)";
             Connection con = sql2o.open();
             int id= (int) con.createQuery(sql, true)
