@@ -9,7 +9,7 @@ public class AnimalTest {
 
     @Test
     public void testTestGetName() {
-        Animal animal=new Animal("Monkey","healthy","Old","true");
+        Animal animal=new Animal("Monkey","healthy","Old",true);
         Assert.assertEquals("Monkey", animal.getName());
     }
 

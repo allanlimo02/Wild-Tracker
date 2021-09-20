@@ -11,13 +11,12 @@ public class Dao implements DaoInterface {
 
     @Override
     public   void add(Animal animal) {
-       // Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker", "ngetich", "12345");
-
+       Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker", "ngetich", "12345");
         try {
             Class.forName("org.h2.Driver");
-            String sql = "INSERT INTO animals; (name,health, age,endangered) VALUES (:name, :age, :health,:endangered)";
+            String sql = "INSERT INTO animals (name,health, age,endangered) VALUES (:name, :age, :health,:endangered)";
             Connection con = sql2o.open();
-            int id = (int) con.createQuery(sql, true)
+             int id= (int) con.createQuery(sql, true)
                     .bind(animal)
                     .executeUpdate()
                     .getKey();
@@ -31,7 +30,7 @@ public class Dao implements DaoInterface {
         try(Connection con = sql2o.open()){
             String sql="SELECT * FROM animals";
             return con.createQuery(sql,true) //raw sql
-                    .executeAndFetch(Animal.class); //fetch a listxx`
+                    .executeAndFetch(Animal.class); //fetch a list
         }
 
 

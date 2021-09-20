@@ -6,9 +6,10 @@ public class Animal {
     private String name;
     private String health;
     private String age;
-    private String endangered;
+    private boolean endangered;
 
-    public Animal(String name, String health, String age, String endangered) {
+    public Animal( String name, String health, String age, boolean endangered) {
+
         this.name = name;
         this.health = health;
         this.age = age;
@@ -39,7 +40,11 @@ public class Animal {
 
     public void setAge(String age) { this.age = age;  }
 
-    public String getEndangered() { return endangered;  }
+    public boolean isEndangered() {
+        return endangered;
+    }
 
-    public void setEndangered(String endangered) { this.endangered = endangered; }
+    public void setEndangered(boolean endangered) {
+        this.endangered = endangered;
+    }
 }

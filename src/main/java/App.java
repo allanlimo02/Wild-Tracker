@@ -28,14 +28,14 @@ public class App {
             String age = request.queryParams("age");
             String health = request.queryParams("health");
             String ranger = request.queryParams("ranger");
-            String endangered = request.queryParams("endangered");
-            Animal animal=new Animal(name,age,health,ranger);
+            //boolean endangered = request.queryParams("endangered");
+            Animal animal=new Animal(name,health,age,false);
             //model.put("endangered",endangered);
             //Trying to save to sessions to confirms it works
             model.put("name",name);
             model.put("age",age);
             model.put("health",health);
-            model.put("endangered",endangered);
+            model.put("endangered",false);
             dao.add(animal);
             return new ModelAndView(model,"success.hbs");
         }, new HandlebarsTemplateEngine());
