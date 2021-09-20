@@ -1,23 +1,39 @@
 {{#partial "content"}}
-    <div class="container text-center">
+    <br><br><br>
+    <div style="text-align: center; color: wheat;">
+        <h1>Welcome to Wild Tracker App</h1>
+        <p>We track and help rescue animals</p>
+    </div>
+
+    <div class="container text-center" style="color:white;" >
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-3 text-center">
-                <h3>Record a New animal Animal?</h3>
+                <h3>Have you spotted an Endangered Animal?</h3>
+                <p>Make a new sighting</p>
 
-                <a href="/new-animal"><button class="btn btn-primary" >Add new Endangered</button></a>
+                <a href="/new-animal"><button class="btn btn-primary" >Create new Endangered</button></a>
             </div>
             <div class="col-md-3">
                 <h3>Seen an Animal?</h3>
-                <p>Make a new sighting record</p>
-
-                <a href="/new-animal"><button class="btn btn-primary" >Add new sightings</button></a>
-
-
+                <p>Make a new sighting record</p><br>
+                <a href="/new-sight"><button class="btn btn-primary" >Add new sightings</button></a>
             </div>
-
             <div class="col-md-3"></div>
         </div>
     </div>
+<!--    To show all available animals in DB-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2>All Endangered Animals</h2>
+
+
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
 {{/partial}}
 {{> layout.hbs}}

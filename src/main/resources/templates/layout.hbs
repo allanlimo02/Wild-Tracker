@@ -4,31 +4,29 @@
     <title>{{#block "title"}}Heroes & Heroines {{/block}}</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
 </head>
-<body>
-<div>
-    <div class="row h-10 bg-primary ">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-3">
+<body style=" overflow-x: hidden; color:white:">
 
-        </div>
-        <div class="col-md-3">
-            <br>
-        </div>
-    </div>
-</div>
 
-<div class="container">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="/">Home</a></li>
+            <li role="presentation" ><a href="/new-sight">Create a new Sight</a></li>
+            <li role="presentation"><a href="/new-animal">Create a new Endangered</a></li>
+
+        </ul>
     <!--begin main template-->
 
+<div style="background-image: url(images/backround.jpg); height: 900px; background-attachment: fixed;">
+    <div style="background-color: rgba(0, 0, 60, 0.5); height: 900px; background-attachment: fixed;">
 
-    <div class="col-md-12">
-        {{#block "content"}}
+        <div >
+            {{#block "content"}}
 
-        {{/block}}
+            {{/block}}
 
+        </div>
     </div>
 </div>
+
 <!--end main template-->
 {{#block "footer"}}
 

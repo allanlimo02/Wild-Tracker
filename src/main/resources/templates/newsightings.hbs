@@ -1,17 +1,36 @@
 {{#partial "content"}}
-    <form action="sightSuccess" method="post">
-        <!--  -->
-        <label for="animalId">Animal ID</label>
-        <input type="text" name="animalId" id="animalId" class="form-control">
-        <!--  -->
-        <label for="location">Sighting Location</label>
-        <input type="text" name="location" id="location" class="form-control">
-        <!--  -->
-        <label for="rangerName">Ranger Name</label>
-        <input type="text" name="rangerName" id="rangerName" class="form-control">
-        <!--  -->
-        <button type="submit" class="btn btn-success">Submit Sighting</button>
 
-    </form>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-5">
+            <br><br><br><br><br><br>
+            <form action="sightSuccess" method="post" style="border: 1px solid green; border-radius: 10px;padding: 10px; color:white;">
+                <!--  -->
+                <label for="animalId">Animal ID</label>
+                <input type="text" name="animalId" id="animalId" class="form-control">
+                <!--  -->
+                <label for="location">Sightings.Sighting Location</label>
+                <input type="text" name="location" id="location" class="form-control">
+                <!--  -->
+                <label for="rangerName">Ranger Name</label>
+                <select name="rangerName" id="rangerName" class="form-control">
+                    <option value=""></option>
+                    <option value="Kenneth">Kenneth</option>
+                    <option value="Dennis">Dennis</option>
+                    <option value="Mercy">Mercy</option>
+                    <option value="Esther">Esther</option>
+                </select>
+                <!--  -->
+                <br>
+                <button type="submit" class="btn btn-success">Submit Sightings</button>
+
+            </form><br>
+            <button class="btn btn-primary" href="/">Back Homepage</button>
+
+        </div>
+        <div class="col-md-3"></div>
+
+
+    </div>
 {{/partial}}
 {{> layout.hbs}}

@@ -1,10 +1,12 @@
+package Sightings;
+
 public class Sighting {
     private String animalId;
     private String location;
     private String ranger;
     private int sight_id;
 
-    public Sighting(String animalId, String location, String ranger) {
+    public Sighting( String location, String ranger,String animalId) {
         this.animalId = animalId;
         this.location = location;
         this.ranger = ranger;

@@ -20,6 +20,7 @@ public class Dao implements DaoInterface {
                     .bind(animal)
                     .executeUpdate()
                     .getKey();
+
         } catch (Exception ex) {
             System.out.println("Invalid request");
             ex.printStackTrace();
