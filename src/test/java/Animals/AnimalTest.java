@@ -1,27 +1,40 @@
 package Animals;
 
-import junit.framework.TestCase;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class AnimalTest {
+import static org.junit.jupiter.api.Assertions.*;
 
+class AnimalTest {
 
     @Test
-    public void testTestGetName() {
-        Animal animal=new Animal("Monkey","healthy","Old",true);
-        Assert.assertEquals("Monkey", animal.getName());
-    }
-    @Test
-    public void testSetName_Working_true() {
-        Animal animal=new Animal("Monkey","healthy","Old",true);
-        Assert.assertEquals("Monkey", animal.getName());
-    }
-    @Test
-    public void testSetName_Workingwell_okay() {
-        Animal testRest = new Animal( "Lion","okay","old",true);
-        testRest.setName("new name");
-        Assert.assertEquals("new name", testRest.getName());
+    void getId() {
     }
 
+    @Test
+    void setId() {
+    }
+
+    @Test
+    void getName() {
+    }
+
+    @Test
+    void setName() {
+    }
+
+    @Test
+    void getHealth() {
+    }
+
+    @Test
+    void setHealth() {
+    }
+
+    @Test
+    void getAge() {
+    }
+
+    @Test
+    void setAge() {
+    }
 }
