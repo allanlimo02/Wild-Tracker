@@ -19,7 +19,6 @@ public class Dao implements DaoInterface {
                     .bind(animal)
                     .executeUpdate()
                     .getKey();
-
         } catch (Exception ex) {
             System.out.println("Invalid request");
             ex.printStackTrace();
@@ -27,39 +26,42 @@ public class Dao implements DaoInterface {
     }
     @Override
     public List<Animal> findAll() {
-        try(Connection con = sql2o.open()){
-            String sql="SELECT * FROM animals";
-            return con.createQuery(sql,true) //raw sql
+        Connection con = sql2o.open();
+            String sql = "SELECT * FROM animals";
+            return con.createQuery(sql, true) //raw sql
                     .executeAndFetch(Animal.class); //fetch a list
-        }
-
-
     }
-
     @Override
     public void updateById(int id) {
+        String sql = "SELECT * FROM animals WHERE id=:id";
+        try(Connection conn=sql2o.open()){
+            conn.createQuery(sql)
+                    .addParameter("id",id)
+                    .executeAndFetch(Animal.class);
+        }catch(Exception ex){
+            ex.printStackTrace();
+            System.out.println("Un-able to delete ");
+        }
 
     }
-
     @Override
     public void findById(int id) {
 
     }
-
-
-
     @Override
     public void delete(int id) {
-
     }
-
     @Override
-    public List<Animal> deleteAll() {
+    public void deleteAll() {
         String sql="DELETE * FROM animals";
         try (Connection con = sql2o.open() ){
-            return con.createQuery(sql)
-                    .executeAndFetch(Animal.class);
+             con.createQuery(sql)
+                    .executeUpdate();
+        }catch(Exception ex){
+            ex.printStackTrace();
+            System.out.println("Un-able to delete ");
         }
+
 
 
     }

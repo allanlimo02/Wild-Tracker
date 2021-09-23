@@ -3,7 +3,7 @@
         <div class="w-90" style="border-radius: 10px; background-image: url(images/listBg.jpg);">
             <div class="holder" style=" height: 800px; background-color: rgba(0, 50, 50, 0.5);" >
                 <div class="tables">
-                    <h2 class="text-center text-white">Here are all animals created</h2>
+                    <h2 class="text-center text-white">Here are all Citings Made</h2>
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
@@ -11,20 +11,20 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">ID </th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Health</th>
-                                    <th scope="col">Age</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Ranger Name</th>
+                                    <th scope="col">Animal ID</th>
 
                                 </tr>
                                 </thead>
                                 <tbody>
 
-                                {{#if animals}}
+                                {{#if "content"}}
                                     <tr>
                                         <th scope="row">{{id}}</th>
-                                        <td>{{name}}</td>
-                                        <td>{{health}}</td>
-                                        <td>{{age}}</td>
+                                        <td>{{location}}</td>
+                                        <td>{{ranger_name}}</td>
+                                        <td>{{animal_id}}</td>
                                     </tr>
                                 {{/if}}
 
@@ -38,5 +38,6 @@
             </div>
         </div>
     </div>
+
 {{/partial}}
 {{> layout.hbs}}

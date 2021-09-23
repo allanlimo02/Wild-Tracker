@@ -1,10 +1,13 @@
-package SightingDAO;
+package Dao;
+
 import Sightings.Sighting;
 
-public interface SightingDao {
+import java.util.List;
+
+public interface sighting {
     void add(Sighting sighting);
     void read();
+    List<String> findById(int id);
     void update();
     void delete();
-
 }

@@ -10,5 +10,5 @@ public interface DaoInterface {
     void findById(int id);
     List<Animal> findAll();
     void delete(int id);
-    List<Animal> deleteAll();
+    void deleteAll();
 }

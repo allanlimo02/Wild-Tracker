@@ -1,17 +1,20 @@
 package Sightings;
 
+import java.util.ArrayList;
+
 public class Sighting {
-    private String animal_id;
+    private int animal_id;
     private String location;
-    private String ranger;
+    private String rangerName;
     private int sight_id;
 
-    public Sighting(String location, String ranger, String animal_id) {
+    public Sighting(String location, String rangerName, int animal_id) {
         this.location = location;
-        this.ranger = ranger;
+        this.rangerName = rangerName;
         this.animal_id = animal_id;
 
     }
+
 
     public int getSight_id() {
         return sight_id;
@@ -21,11 +24,11 @@ public class Sighting {
         this.sight_id = sight_id;
     }
 
-    public String getAnimal_id() {
+    public int getAnimal_id() {
         return animal_id;
     }
 
-    public void setAnimal_id(String animal_id) {
+    public void setAnimal_id(int animal_id) {
         this.animal_id = animal_id;
     }
 
@@ -37,11 +40,17 @@ public class Sighting {
         this.location = location;
     }
 
-    public String getRanger() {
-        return ranger;
+    public String getRangerName() {
+        return rangerName;
     }
 
-    public void setRanger(String ranger) {
-        this.ranger = ranger;
+    public void setRangerName(String rangerName) {
+        this.rangerName = rangerName;
+    }
+    private static ArrayList<Sighting> instances = new ArrayList<>();
+
+
+    public static ArrayList<Sighting> getAll(){
+        return instances;
     }
 }
