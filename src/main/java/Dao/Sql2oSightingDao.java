@@ -2,6 +2,7 @@ package Dao;
 
 import Animals.Animal;
 import Sightings.Sighting;
+import Sightings.SightingDb;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
@@ -33,11 +34,15 @@ public class Sql2oSightingDao implements sighting{
             ex.printStackTrace();
         }
     }
-    public List<Sighting> findAll() {
+    public List<SightingDb> findAll() {
         Connection con = sql2o.open();
-        String sql = "SELECT * FROM animals";
-        return con.createQuery(sql, true) //raw sql
-                .executeAndFetch(Sighting.class); //fetch a list
+            String sql = "SELECT * FROM sightings";
+            List <SightingDb> allSightings =con.createQuery(sql, true)
+                .executeAndFetch(SightingDb.class); //fetch a list
+
+            return allSightings; //raw sql
+
+
     }
 
     @Override

@@ -1,36 +1,37 @@
 {{#partial "content"}}
     <div class="mainer"  >
-        <div class="w-90" style="border-radius: 10px; background-image: url(images/listBg.jpg);">
-            <div class="holder" style=" height: 800px; background-color: rgba(0, 50, 50, 0.5);" >
+        <div class="w-90" style="border-radius: 10px; background-image: url(images/listBg.jpg); background-attachment: fixed;">
+            <div class="holder" style=" height: 800px; background-color: rgba(0, 50, 50, 0.5); background-attachment: fixed;" >
                 <div class="tables">
                     <h2 class="text-center text-white">Here are all animals created</h2>
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th scope="col">ID </th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Health</th>
-                                    <th scope="col">Age</th>
 
-                                </tr>
-                                </thead>
-                                <tbody>
-
-                                {{#if animals}}
+                                <table class="table" style="color:white;">
+                                    <tr>
+                                    <thead>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Health</th>
+                                    <th>Age</th>
+                                    <th>Endangered</th>
+                                    </thead>
+                                    </tr>
+                                    <tbody>
+                                    {{#each}}
                                     <tr>
                                         <th scope="row">{{id}}</th>
                                         <td>{{name}}</td>
                                         <td>{{health}}</td>
                                         <td>{{age}}</td>
+                                        <td>{{endangered}}</td>
                                     </tr>
-                                {{/if}}
+                                    {{/each}}
+                                    </tbody>
+                                </table>
 
 
-                                </tbody>
-                            </table>
                         </div>
                         <div class="col-md-3"></div>
                     </div>

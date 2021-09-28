@@ -20,17 +20,12 @@ class AnimalTest {
 
     @Test
     void getHealth() {
+        Animal animal = new Animal("Lion","Health","old",true);
+        assertEquals("Health",animal.getHealth());
     }
-
-    @Test
-    void setHealth() {
-    }
-
     @Test
     void getAge() {
-    }
-
-    @Test
-    void setAge() {
+        Animal animal = new Animal("old","Health","old",true);
+        assertEquals("old",animal.getAge());
     }
 }

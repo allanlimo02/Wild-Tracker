@@ -6,6 +6,7 @@ import Animals.Animal;
 import Dao.Dao;
 import Dao.Sql2oSightingDao;
 import Sightings.Sighting;
+import Sightings.SightingDb;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import static spark.Spark.*;
@@ -32,13 +33,17 @@ public class App {
             String age = request.queryParams("age");
             String health = request.queryParams("health");
             String ranger = request.queryParams("ranger");
-            //boolean endangered = request.queryParams("endangered");
-            Animal animal=new Animal(name,health,age,false);
+            String endangered = request.queryParams("endangered");
+            Boolean endangeredAnimal=false;
+            if(endangered.equals("true")){
+                endangeredAnimal=true;
+            }
+            Animal animal=new Animal(name,health,age,endangeredAnimal);
             //Trying to save to sessions to confirms it works
             model.put("name",name);
             model.put("age",age);
             model.put("health",health);
-            model.put("endangered",false);
+            model.put("endangered",endangeredAnimal);
             dao.add(animal);
             return new ModelAndView(model,"success.hbs");
         }, new HandlebarsTemplateEngine());
@@ -72,14 +77,16 @@ public class App {
         get("/allAnimals", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Animal> animal = dao.findAll();
-            return new ModelAndView(model, "allAnimals.hbs");
+            model.put("animal",animal);
+            return new ModelAndView(animal, "allAnimals.hbs");
         }, new HandlebarsTemplateEngine());
-
         // route to display all allSighting.hbs
         get("/allSighting", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            //List<Sighting> animal = sightDao.findAll();
-            return new ModelAndView(model, "allSighting.hbs");
+            List<SightingDb> sight = sightDao.findAll();
+//           String
+            model.put("sight",sight);
+            return new ModelAndView(sight, "allSighting.hbs");
         }, new HandlebarsTemplateEngine());
 
         //******************************************

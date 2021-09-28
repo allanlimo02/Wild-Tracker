@@ -7,30 +7,32 @@
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <table class="table">
-                                <thead>
+<!--                        <#list sight as sight>-->
+<!--                        <h2>$sight</h2>-->
+<!--                        </list >-->
+
+                            <table class="table" style="color:white;">
                                 <tr>
-                                    <th scope="col">ID </th>
-                                    <th scope="col">Location</th>
-                                    <th scope="col">Ranger Name</th>
-                                    <th scope="col">Animal ID</th>
-
+                                    <thead>
+                                    <th>ID</th>
+                                    <th>Location</th>
+                                    <th>Ranger Name</th>
+                                    <th>Animal ID</th>
+                                    </thead>
                                 </tr>
-                                </thead>
                                 <tbody>
-
-                                {{#if "content"}}
+                                {{#each}}
                                     <tr>
-                                        <th scope="row">{{id}}</th>
+                                        <td>{{id}}</td>
                                         <td>{{location}}</td>
                                         <td>{{ranger_name}}</td>
                                         <td>{{animal_id}}</td>
                                     </tr>
-                                {{/if}}
-
-
+                                {{/each}}
                                 </tbody>
                             </table>
+
+
                         </div>
                         <div class="col-md-3"></div>
                     </div>
